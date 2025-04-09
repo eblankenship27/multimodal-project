@@ -9,23 +9,26 @@
 <body>
     <header>
         <h1>
-            Using CSS's display property and flexbox to structure a website
+            Using CSS to create a website Layout
         </h1>
         <nav>
             <a href='#Home' >Home</a>
             <a href='#Basics'>Basics</a>
-            <a href='#Display'>Display</a>
-            <a href='#Flex'>Flex</a>
+            <a href='#CSS'>CSS Layout</a>
         </nav>
     </header>
     <section id="Home">
         <article>
-            <p>By: Evan Blankenship</p>
-            <span>Being able to say that you created a website is something that is really cool and interesting. 
+            <span class="name">By: Evan Blankenship</span>
+            <br>
+            <br>
+            <p>
+                Being able to say that you created a website is something that is really cool and interesting. 
                 Being able to create my own website was something that drew me in and captivated me, which led to me teaching myself web development. 
                 However, when I was starring on this journey, I had no clue of where to start and what anything meant. 
                 This webpage is not meant to be a guide on how to do everything in web development, or even where to start but it does have some courses and roadmaps attached at the bottom. 
-                This webpage is here to show how the CSS display properties work, as it was something that I have continuously had trouble with as I learned on my own.</span>
+                This webpage is here to show how the CSS display properties work, as it was something that I have continuously had trouble with as I learned on my own.
+            </p>
         </article>
     </section>
     <section id="Basics">
@@ -37,11 +40,13 @@
                 Web development uses the combination of HTML, CSS, and JavaScript to create websites, style the websites, and give the websites functionality. 
                 The process uses HTML to create the framework of the website, CSS to style and shape the website, and it uses JavaScript to dynamically update and change the website. 
             </p>
+            <br>
             <p>
                 HTML stands for HyperText Markup Language, and is used as the structure, or the foundations of the website, placing all the items and building blocks on the page. 
                 It uses different tags such as <code>&lt;h1&gt;</code>, <code>&lt;p&gt;</code>, <code>&lt;img&gt;</code>, and <code>&lt;div&gt;</code> to display headers, paragraphs, images, and containers. 
                 HTML uses these elements to create the skeleton of the website, but it does not dictate the layout or how the content is displayed at all.
             </p>
+            <br>
             <p>
                 CSS stands for Cascading Style Sheets, and is used to control the design and the layout of the website. 
                 CSS can be used to change properties on direct elements of HTML or it can use the ids and the classes from HTML. 
@@ -52,66 +57,93 @@
             </p>
         </article>
     </section>
-    <section id="Display">
+    <section id="CSS">
         <article>
-            <h2>The CSS display property</h2>
+            <h2>CSS Layout formatting</h2>
             <p>
                 When it comes to using CSS to structure the layout of an HTML page, there are three common properties that are extremely useful. 
                 These three properties are the display property, the position property, and the margin and padding properties. 
+            </p>
+        </article>
+        <article>
+            <h3>CSS Margins and Padding</h3>
+            <p>
                 The margin property is used to set the margins of an object, or the space outside of an object, and the padding property is used to give an object extra space inside of the object. 
                 An example is given below:
             </p>
-            <div class="container">
-                <div class="box"></div>
-                <div class="box extra-padding"></div>
+            <div class="flex-container">
+                <div class="container">
+                    <div class="square">1</div>
+                </div>
+
+                <div class="container">
+                    <div class="square extra-margin">2</div>
+                </div>
+
+                <div class="container">
+                    <div class="square extra-padding">3</div>
+                </div>
             </div>
+            <p>
+                In the above examples, box 1 has no extra margin or padding, and is hugging the left wall. 
+                Box 2 is given extra margins, and therefore is given extra space outside of itself, placing itself closer to the center.       
+                Box three is given extra left padding, which gives extra space to the inside of the object, as seen with box three and its extended left side.
+            </p>
+        </article>
+        <article>
+            <h3>CSS Position Property</h3>
+            <aside>
+                <p>
+                    An example of an object with the fixed display is the Navigation Bar at the top of this website. 
+                    Notice how the Nav bar stays 'fixed' at the top of the page.
+                </p>
+            </aside>
             <p>
                 The next property is the position property. 
                 This property controls how elements are set on the page, with values such as <code>fixed</code>, <code>static</code>, <code>absolute</code>, and <code>relative</code>. 
                 The most commonly used are the <code>absolute</code>, <code>fixed</code>, and the <code>relative</code> values, which position the object in the absolute space, fixed on the screen, or relative to other objects respectively. 
                 Below are some examples of how these properties work.
             </p>
+            
             <div class="demo">
-                <h3>CSS Display Demo</h3>
+                <h3>CSS Position Demo</h3>
                 <div class="choices">
-                    <button type="button" onclick="document.getElementById('position-box').style.position = 'absolute' "><code>display: block;</code></button>
-                    <button type="button" onclick="document.getElementById('position-box').style.position = 'inline-block' "><code>display: inline-block;</code></button>
-                    <button type="button" onclick="document.getElementById('position-box').style.position = 'flex' "><code>display: flex;</code></button>
+                    <button type="button" onclick="positionStatic()"><code>position: static;</code></button>
+                    <button type="button" onclick="positionAbsolute()"><code>position: absolute;</code></button>
+                    <button type="button" onclick="positionRelative()"><code>position: relative;</code></button>
+                    <button type="button" onclick="positionFixed()"><code>position: fixed;</code></button>
                 </div>
                 <div class="output-container">
-                    <div class="output">
-                        <div class="box"></div>
-                        <div id="position-box" class="box"></div>
-                        <div class="box"></div>
+                    <div class="output position-output">
+                        <div class="box">1</div>
+                        <div id="position-box" class="box">2</div>
+                        <div class="box">3</div>
                     </div>
                 </div>
             </div>
-            <div class="positions">
-                <div class="container">
-                    <div class="box fixed"></div>
-                    <pre><code>
-.fixed {
-    position: fixed;
-}       
-                    </code></pre>
-                </div>
-                <div class="container">
-                    <div class="box absolute"></div>
-                    <pre><code>
-.fixed {
-    position: absolute;
-}       
-                    </code></pre>
-                </div>
-                <div class="container">
-                    <div class="box relative"></div>
-                    <pre><code>
-.fixed {
-    position: relative;
-}       
-                    </code></pre>
-                </div>
-            </div>
+            <p>
+                Given the demo above, the four buttons give the box labeled '2' different position values.
+                The first button, <code>position: static;</code>, sets the position to static, which is the default value. When a object is static, it is positioned according to the normal flow of the page. 
+            </p>
+            <p>
+                The next button, <code>position: absolute;</code>, sets the position of the object to an absolute position in its container. 
+                This means that the position of the object is dictated by other CSS properties called inset properties. 
+                These inset properties come in the form of <code>top</code>, <code>left</code>, <code>bottom</code>, and <code>right</code>, allowing these values to be manually set.
+                The code for the <code>position: absolute;</code> sets <code>top</code> and <code>left</code> to <code>'40px'</code>, meaning they are inset by 40 pixels in the container outlined by the orange border.
+            </p>
+            <p>
+                The third button, <code>position: relative;</code>, sets the position to be relative to the other objects it is around. 
+                Using the inset values, an object with the position value of <code>relative</code> can be moved relative to its surrounding objects.
+                In this example, the code gives box 2 an inset <code>left</code> value of <code>'100px'</code>, meaning it is set 100 pixels left of its original position.
+            </p>
+            <p>
+                The last button, <code>position: fixed;</code>, sets the position of the object to a fixed position on the page. 
+                Once this is done, the object does not move while the page is scrolled but stays at the location applied to it.
+                Box 2 was given the inset <code>top</code> and <code>left</code> values of <code>'400px'</code>, meaning that it is fixed in place at 400 pixels from the top and 400 pixels from the left of the page.
+            </p>
+        </article>
+        <article id="Display">
+            <h3>CSS Display Property</h3>
             <p>
                 The last property is the display property. 
                 This property determines how an element behaves in a layout. 
@@ -132,23 +164,28 @@
                     <div class="output">
                         Some text A
                         <div id="outline" class="output-outline">
-                            <div id="display-box" class="box"></div>
-                            <div id="display-box" class="box"></div>
-                            <div id="display-box" class="box"></div>
+                            <div id="display-box" class="box">1</div>
+                            <div id="display-box" class="box">2</div>
+                            <div id="display-box" class="box">3</div>
                         </div>
                         Some text B
                     </div>
                 </div>
             </div>
+            <p>
+                Given the demo above, there are 5 different display values that can be applied to the container for the three boxes.
+                When the values are applied, they are not applied to the individual boxes but rather the entire
+            </p>
         </article>
     </section>
-    <section id="Flex">
+    <section id="Conclusion">
         <article>
-            <h2>The CSS Flexbox layout</h2>
+            <h2>Conclusion</h2>
             <p>
 
             </p>
         </article>
     </section>
+    <script src="script.js"></script>
 </body>
 </html>
