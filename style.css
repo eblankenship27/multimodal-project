@@ -35,6 +35,10 @@ a {
     text-decoration: none;
 }
 
+#actual_link {
+    text-decoration: underline;
+}
+
 nav {
     display: flex;
     justify-content: flex-end;
@@ -44,6 +48,7 @@ nav {
 nav > a {
     padding: 0 1.2rem;
     margin: auto 0;
+    color: initial
 }
 
 code {
@@ -135,6 +140,8 @@ article > h3 {
     border: 1px solid grey;
 }
 
+
+
 .choices {
     display: flex;
     margin: 10px 5px;
@@ -159,6 +166,10 @@ button {
     height: 100%;
 }
 
+.display-output {
+    height: 240px
+}
+
 .position-output {
     position: relative;
     border: 3px dotted #dfb04e;
@@ -177,4 +188,8 @@ button {
     background-color: #ccccff;
     border: 1px solid #ababab;
     color: black;
+}
+
+.last {
+    margin-bottom: 50px;
 }
