@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evan's Multimodal Project</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>
+            Using CSS's display property and flexbox to structure a website
+        </h1>
+        <nav>
+            <a href='#Home' >Home</a>
+            <a href='#Basics'>Basics</a>
+            <a href='#Display'>Display</a>
+            <a href='#Flex'>Flex</a>
+        </nav>
+    </header>
+    <section id="Home">
+        <article>
+            <p>By: Evan Blankenship</p>
+            <span>Being able to say that you created a website is something that is really cool and interesting. 
+                Being able to create my own website was something that drew me in and captivated me, which led to me teaching myself web development. 
+                However, when I was starring on this journey, I had no clue of where to start and what anything meant. 
+                This webpage is not meant to be a guide on how to do everything in web development, or even where to start but it does have some courses and roadmaps attached at the bottom. 
+                This webpage is here to show how the CSS display properties work, as it was something that I have continuously had trouble with as I learned on my own.</span>
+        </article>
+    </section>
+    <section id="Basics">
+        <article>
+            <h2>What is HTML and CSS?</h2>
+            <p>
+                As a whole, web development is the process of creating and maintaining websites and web applications. 
+                Before we dive into the display properties of CSS, we need to know what HTML and CSS are. 
+                Web development uses the combination of HTML, CSS, and JavaScript to create websites, style the websites, and give the websites functionality. 
+                The process uses HTML to create the framework of the website, CSS to style and shape the website, and it uses JavaScript to dynamically update and change the website. 
+            </p>
+            <p>
+                HTML stands for HyperText Markup Language, and is used as the structure, or the foundations of the website, placing all the items and building blocks on the page. 
+                It uses different tags such as <code>&lt;h1&gt;</code>, <code>&lt;p&gt;</code>, <code>&lt;img&gt;</code>, and <code>&lt;div&gt;</code> to display headers, paragraphs, images, and containers. 
+                HTML uses these elements to create the skeleton of the website, but it does not dictate the layout or how the content is displayed at all.
+            </p>
+            <p>
+                CSS stands for Cascading Style Sheets, and is used to control the design and the layout of the website. 
+                CSS can be used to change properties on direct elements of HTML or it can use the ids and the classes from HTML. 
+                In HTML, an element can be given a class or an Id, and the classes given to elements can also be called in CSS. 
+                CSS can be applied to a HTML page in two ways, by embedding the CSS directly in the HTML with a style tag, or by linking an external style sheet. 
+                CSS also allows for making the website more appealing and responsive through different screen sizes. 
+                JavaScript is used to dynamically change the values in both HTML and CSS, but I will not be going over it on this website.
+            </p>
+        </article>
+    </section>
+    <section id="Display">
+        <article>
+            <h2>The CSS display property</h2>
+            <p>
+                When it comes to using CSS to structure the layout of an HTML page, there are three common properties that are extremely useful. 
+                These three properties are the display property, the position property, and the margin and padding properties. 
+                The margin property is used to set the margins of an object, or the space outside of an object, and the padding property is used to give an object extra space inside of the object. 
+                An example is given below:
+            </p>
+            <div class="container">
+                <div class="box"></div>
+                <div class="box extra-padding"></div>
+            </div>
+            <p>
+                The next property is the position property. 
+                This property controls how elements are set on the page, with values such as <code>fixed</code>, <code>static</code>, <code>absolute</code>, and <code>relative</code>. 
+                The most commonly used are the <code>absolute</code>, <code>fixed</code>, and the <code>relative</code> values, which position the object in the absolute space, fixed on the screen, or relative to other objects respectively. 
+                Below are some examples of how these properties work.
+            </p>
+            <div class="demo">
+                <h3>CSS Display Demo</h3>
+                <div class="choices">
+                    <button type="button" onclick="document.getElementById('position-box').style.position = 'absolute' "><code>display: block;</code></button>
+                    <button type="button" onclick="document.getElementById('position-box').style.position = 'inline-block' "><code>display: inline-block;</code></button>
+                    <button type="button" onclick="document.getElementById('position-box').style.position = 'flex' "><code>display: flex;</code></button>
+                </div>
+                <div class="output-container">
+                    <div class="output">
+                        <div class="box"></div>
+                        <div id="position-box" class="box"></div>
+                        <div class="box"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="positions">
+                <div class="container">
+                    <div class="box fixed"></div>
+                    <pre><code>
+.fixed {
+    position: fixed;
+}       
+                    </code></pre>
+                </div>
+                <div class="container">
+                    <div class="box absolute"></div>
+                    <pre><code>
+.fixed {
+    position: absolute;
+}       
+                    </code></pre>
+                </div>
+                <div class="container">
+                    <div class="box relative"></div>
+                    <pre><code>
+.fixed {
+    position: relative;
+}       
+                    </code></pre>
+                </div>
+            </div>
+            <p>
+                The last property is the display property. 
+                This property determines how an element behaves in a layout. 
+                This property has many uses and can be applied to both the element itself and the children (sub-elements) of an element. 
+                The most commonly used values of display are <code>block</code> and <code>inline</code> which determine whether an element will take up the full width of their container or just as much as they need, and the values <code>flex</code> and <code>grid</code> which are extremely useful for setting more complex statements. 
+                Below is an interactive piece that allows you to test how these properties work.
+            </p>
+            <div class="demo">
+                <h3>CSS Display Demo</h3>
+                <div class="choices">
+                    <button type="button" onclick="document.getElementById('outline').style.display = 'block' "><code>display: block;</code></button>
+                    <button type="button" onclick="document.getElementById('outline').style.display = 'inline-block' "><code>display: inline-block;</code></button>
+                    <button type="button" onclick="document.getElementById('outline').style.display = 'flex' "><code>display: flex;</code></button>
+                    <button type="button" onclick="document.getElementById('outline').style.display = 'grid' "><code>display: grid;</code></button>
+                    <button type="button" onclick="document.getElementById('outline').style.display = 'none' "><code>display: none;</code></button>
+                </div>
+                <div class="output-container">
+                    <div class="output">
+                        Some text A
+                        <div id="outline" class="output-outline">
+                            <div id="display-box" class="box"></div>
+                            <div id="display-box" class="box"></div>
+                            <div id="display-box" class="box"></div>
+                        </div>
+                        Some text B
+                    </div>
+                </div>
+            </div>
+        </article>
+    </section>
+    <section id="Flex">
+        <article>
+            <h2>The CSS Flexbox layout</h2>
+            <p>
+
+            </p>
+        </article>
+    </section>
+</body>
+</html>
